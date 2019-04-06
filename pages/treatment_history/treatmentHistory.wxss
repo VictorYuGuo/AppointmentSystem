@@ -1,0 +1,28 @@
+/* pages/treatment_history/treatmentHistory.wxss */
+.title_container{
+  background: #d0d0d0;
+}
+.item_container{
+  margin-bottom:50rpx;
+}
+
+.item_date{
+  text-align: center;
+  width: 30%;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top:5rpx;
+  border-bottom: 1px solid #d0d0d0;
+}
+.item{
+  width: 23.3%;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top:5rpx;
+  border-bottom: 1px solid #d0d0d0;
+}

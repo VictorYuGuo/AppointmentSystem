@@ -1,0 +1,25 @@
+<!--pages/myview/myview.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
+<view class="myview_itemgroup">
+  <view class="myview_item" bindtap="getAppointHistory">•我的预约记录</view>
+  <view class="blank"></view>
+  <view class="blank"></view>
+  <view class="blank"></view>
+  <view class="myview_item" bindtap="getTreatmentHistory">•就诊记录</view>
+  <view class="blank"></view>
+  <view class="blank"></view>
+  <view class="blank"></view>
+  <view class="myview_item" bindtap="getReport">•检查报告</view>
+  <view class="blank"></view>
+  <view class="blank"></view>
+  <view class="blank"></view>
+  <view class="myview_item">•设置</view>
+</view>

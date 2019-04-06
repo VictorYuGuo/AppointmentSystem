@@ -1,0 +1,9 @@
+<!--pages/mapview/map.wxml-->
+<map 
+  id='map' 
+  style='width:100%;height:300px;'
+  longitude="{{longitude2}}" latitude="{{latitude2}}"
+  scale='16'
+  subkey="3A7BZ-V4ZCR-OAXWU-WFEPU-52VV3-ZFB7O"
+  show-location="true"
+></map>

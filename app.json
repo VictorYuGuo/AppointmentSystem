@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/mainview/mainview",
+    "pages/appointment/appointment",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/doctor/doctor",
+    "pages/article/article",
+    "pages/myview/myview",
+    "pages/mapview/map",
+    "pages/appoint_result/appointResult",
+    "pages/doctor_detail/doctorDetail",
+    "pages/chatview/chatView",
+    "pages/report/report",
+    "pages/treatment_history/treatmentHistory",
+    "pages/appoint_history/appointHistory",
+    "pages/appoint_detail/appointDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "医疗机构名称",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#EE82EE",
+    "list": [
+      {
+        "pagePath": "pages/appointment/appointment",
+        "text": "预约",
+        "iconPath": "picture/clock.png",
+        "selectedIconPath": "picture/clock.png"
+      },
+      {
+        "pagePath": "pages/doctor/doctor",
+        "text": "医生",
+        "iconPath": "picture/doctor.png",
+        "selectedIconPath": "picture/doctor.png"
+      },
+      {
+        "pagePath": "pages/mainview/mainview",
+        "text": "首页",
+        "iconPath": "picture/home.png",
+        "selectedIconPath": "picture/home.png"
+      },
+      {
+        "pagePath": "pages/article/article",
+        "text": "科普",
+        "iconPath": "picture/article.png",
+        "selectedIconPath": "picture/article.png"
+      },
+      {
+        "pagePath": "pages/myview/myview",
+        "text": "我的",
+        "iconPath": "picture/me.png",
+        "selectedIconPath": "picture/me.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

@@ -1,0 +1,25 @@
+/* pages/appoint_detail/appointDetail.wxss */
+page {
+  background: radial-gradient(circle at top, #ffffff,#f0f0f0);
+}
+
+.title{
+  margin-bottom: 50rpx;
+}
+
+.appoint_container{
+  /* background: radial-gradient(#ffffff,#dddddd); */
+}
+.container{
+  border-top:1px solid #000000 ;
+  border-bottom:1px solid #000000 ;
+}
+.text{
+  display: inline-block;
+  color:#999999
+}
+
+.data{
+  display: inline-block;
+  font-size: 20px;
+}

@@ -1,0 +1,24 @@
+/* pages/appointment/appointment.wxss */
+.appointment_view {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ccceee;
+}
+
+.picture_form{
+  margin :15rpx; 
+  width: 90rpx;
+  height: 90rpx;
+  border-radius:50%;
+  overflow:hidden;
+}
+
+.pic_title{
+  margin: 15rpx;
+  font-size:30rpx;
+}
+
+.pic_text{
+  margin:15rpx;
+  font-size:25rpx;
+}

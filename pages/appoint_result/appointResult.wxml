@@ -1,0 +1,56 @@
+<!--pages/appoint_result/appointResult.wxml-->
+<view class="container">
+
+  <view class="ar_coverpath">
+    <image src="../../picture/hospital2.jpg" mode="aspectFill"></image>
+  </view>
+
+  <view class="ar_picker">
+    <view class="ar_picker_wrap">
+      <picker bindchange="bindAddrPickerChange" value="{{addrIndex}}" range="{{addrArray}}">
+        <view>
+          <text>{{addrArray[addrIndex]}}</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="ar_cont">
+    <text class="ar_cont_h1">预约时间</text>
+    <view class="ar_date_time">
+      <view class="ar_date">
+        <image src="../../picture/rili.png"></image>
+        <picker mode="date" placeholder="选择日期" value="{{date}}" start="2015-09-01" end="2035-09-01" bindchange="bindDateChange">
+          <view>
+            {{date}}
+          </view>
+        </picker>
+      </view>
+      <view class="ar_time">
+        <image src="../../picture/clock2.png"></image>
+        <picker mode="time" placeholder="选择时间" value="{{time}}" start="01:00" end="24:00" bindchange="bindTimeChange">
+          <view>
+            {{time}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <text class="ar_cont_h1">预约医生</text>
+
+    <!-- <input type="text" placeholder="输入信息" class="input_msg" placeholder-style="font-family:'微软雅黑'"/> -->
+    <view class='doctorPicker'>
+    <picker mode="multiSelector" bindchange="bindMultiDoctorChange" bindcolumnchange="bindMultiDoctorColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="picker">
+        当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
+      </view>
+    </picker>
+    </view>
+
+    <button class="ar_book" bindtap="bindToastTap">确认预定</button>
+    <toast hidden="{{bookToastHidden}}" bindchange="hideToast">
+      预定成功
+    </toast>
+  </view>
+
+</view>

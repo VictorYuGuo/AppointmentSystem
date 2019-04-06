@@ -1,0 +1,55 @@
+<!--pages/mainview/mainview.wxml-->
+<view class="mainview_swiper">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+    <swiper-item>
+      <image src="/picture/hospital1.jpg" mode='aspectFill'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/picture/hospital2.jpg" mode='aspectFill'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/picture/hospital3.jpg" mode='aspectFill'></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="text_form">
+  就诊档案
+</view>
+
+<view class="button_view">
+  <button class="check_report" size='mini' type='default' bindtap="getReport">
+    检查报告
+  </button>
+  <button class="check_record" size='mini' type='default' bindtap="getTreatmentHistory">
+    就诊记录
+  </button>
+</view>
+
+<view class="text_form">
+  预约信息
+</view>
+
+<view class="appointment_view" bindtap="getAppointHistory">
+  <image src="/picture/appointment1.png" class="picture_form"></image>
+  <view>
+    <view class="pic_title">预约助理</view>
+    <view class="pic_text">点击查看预约信息</view>
+  </view>
+</view>
+
+<view class="appointment_view" bindtap="openNote">
+  <image src="/picture/note.png" class="picture_form"></image>
+  <view>
+    <view class="pic_title">备忘录</view>
+    <view class="pic_text">点击查看备忘录</view>
+  </view>
+</view>
+
+<view class="appointment_view">
+  <image src="/picture/money.png" class="picture_form"></image>
+  <view>
+    <view class="pic_title">消费记录</view>
+    <view class="pic_text">点击查看消费记录</view>
+  </view>
+</view>

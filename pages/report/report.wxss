@@ -1,0 +1,32 @@
+/* pages/report/report.wxss */
+.title{
+  font-size: 50rpx;
+  text-align: center;
+}
+
+.date{
+  width: 100%;
+  text-align: center;
+}
+
+.doctor_image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.report_result{
+  font-size: 25rpx;
+  line-height: 50rpx;
+  padding-left: 20rpx;
+  position: relative;
+  /* margin: 120rpx auto 0 35rpx; */
+  background-color: #96EB6A;
+  border: 1px solid #FFB5C5;
+  border-radius: 5px;
+  height: 800rpx;
+  /* background: #000000; */
+  margin-top: 25rpx;
+  margin-left: 100rpx;
+  margin-right: 100rpx;
+  overflow: scroll;
+}

@@ -1,0 +1,32 @@
+/* pages/myview/myview.wxss */
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.myview_itemgroup{
+  margin-top: 100rpx;
+  background-color: #eeeeee;
+}
+
+.blank{
+  background-color: #ffffff;
+  height: 15rpx;
+}
+.myview_item{
+  font-size: 40rpx;
+  margin-top:0rpx; 
+  border-top: 1px solid #ccceee;
+}

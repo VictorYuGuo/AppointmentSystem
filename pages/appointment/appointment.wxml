@@ -1,0 +1,36 @@
+<!--pages/appointment/appointment.wxml-->
+<view class="text_form"> 
+  预约日期
+</view>
+
+<calendar selected="{{selected}}" bindselect="bindselect" bindgetdate="bindgetdate" />
+
+<!-- <view class="text_form"> 
+  服务类别
+</view>
+<view class="button_group">
+  <button class="btn_form">普通门诊</button>
+  <button class="btn_form">急诊</button>
+  <button class="btn_form">儿科</button>
+  <button class="btn_form">体检</button>
+</view> -->
+
+<view class="text_form"> 
+  预约诊所
+</view>
+
+<view id="topView" class="appointment_view" capture-catch:tap='openMap' data-text="广州市天河区天河路600号">
+  <image src="/picture/hospital2.jpg" class="picture_form" data-text="广州市天河区天河路600号"></image>
+  <view data-text="广州市天河区天河路600号">
+    <view class="pic_title" id="child1" data-text="广州市天河区天河路600号">中山大学附属第三医院</view>
+    <view class="pic_text" id='address' data-text="广州市天河区天河路600号">广州市天河区天河路600号</view>
+  </view>
+</view>
+
+<view class="appointment_view" bindtap='openMap'>
+  <image src="/picture/hospital3.jpg" class="picture_form"></image>
+  <view>
+    <view class="pic_title">佛山市某某诊所</view>
+    <view class="pic_text" id='address'>佛山市禅城区某某路某某大厦22楼</view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+<!--pages/treatment_history/treatmentHistory.wxml-->
+<view class="history_container">
+  <view class="title">就诊历史记录</view>
+  <view class="title_container">
+      <view class="item_date">就诊日期</view>
+      <view class="item">就诊诊所</view>
+      <view class="item">就诊科室</view>
+      <view class="item">就诊医生</view>
+    </view>
+  <view class="items_container">
+    <view class="item_container">
+      <view class="item_date">2019-01-01</view>
+      <view class="item">中山三院</view>
+      <view class="item">口腔科</view>
+      <view class="item">赵医生</view>
+    </view>
+    <view class="item_container">
+      <view class="item_date">2019-02-02</view>
+      <view class="item">中山四院</view>
+      <view class="item">眼科</view>
+      <view class="item">钱医生</view>
+    </view>
+  </view>
+</view>

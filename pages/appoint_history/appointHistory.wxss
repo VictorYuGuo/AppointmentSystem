@@ -1,0 +1,10 @@
+/* pages/appoint_history/appointHistory.wxss */
+.item{
+  width: 25%;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top:5rpx;
+  border-bottom: 1px solid #d0d0d0;
+}

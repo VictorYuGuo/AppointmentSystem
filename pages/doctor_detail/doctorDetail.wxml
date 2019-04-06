@@ -1,0 +1,18 @@
+<!--pages/doctor_detail/doctorDetail.wxml-->
+<view class="top">
+  <image class="img-doc" src="/picture/doctor1.png"></image>
+  <text>赵医生</text>
+  <text class="type">皮肤科</text>
+</view>
+
+<view class="desc">
+  <text class="desc-title">主治科目</text>
+  <text class="desc-content">内科，内分泌科专家，消化内科门诊</text>
+</view>
+
+<view class="intro">
+  <text class="intro-title">医生简介</text>
+  <text class="intro-content">华中科技大学同济医学院博士，美国辛辛那提大学医学中心访问学者，原某市某区人民医院呼吸内科医生</text>
+</view>
+
+<button class="btn-bottom" bindtap="chatOnline">在线咨询</button>

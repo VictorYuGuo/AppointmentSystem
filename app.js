@@ -1,4 +1,5 @@
 //app.js
+var util = require('/utils/util.js') //引入微信自带的日期格式化
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -9,7 +10,30 @@ App({
     // 登录
     wx.login({
       success: res => {
+        //获取当前登录时间
+        var timestamp = Date.parse(new Date());
+        var date = new Date(timestamp);
+        var creationTime = util.formatTime(date);
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log(res.code);
+        console.log(creationTime);
+        var app = getApp();
+        //通过获取到的code传到后台校验，若系统中已经有存在的微信号则不再新建用户，否则在系统中新建用户
+        wx.request({
+          url: app.globalData.serverUrl+"/user/new",
+          data:{
+            "wechat":res.code,
+            "type":"0",
+            "time":creationTime,
+          },
+          method: "POST",
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          success: function (res) {
+            console.log(res);
+          },  
+        })
       }
     })
     // 获取用户信息
@@ -34,6 +58,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    //通过全局变量设置服务器地址
+    serverUrl:"http://127.0.0.1:8090",
   }
 })

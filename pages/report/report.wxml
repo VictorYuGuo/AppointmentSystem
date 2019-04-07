@@ -1,9 +1,9 @@
 <!--pages/report/report.wxml-->
 <view class="report_container">
   <view class="title">检查报告</view>
-  <view class="date">获取日期</view>
+  <view class="date">{{reportDate}}</view>
   <image class="doctor_image" src="/picture/doctor1.png"></image>
-  <text>赵医生</text>
-  <text>:</text>
-  <view class="report_result"></view>
+  <text>{{doctorName}}:</text>
+  <text></text>
+  <view class="report_result">{{reportResult}}</view>
 </view>

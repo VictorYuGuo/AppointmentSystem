@@ -5,14 +5,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    reportDate:"",//报告日期
+    doctorName:"",//医生姓名
+    doctorUrl:"",//医生照片
+    reportResult:"",//结果
+    reportSubject:"",//科室
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    var app = getApp();
+    wx.request({
+      url: app.globalData.serverUrl +"/report/find/type=usercode&reportdate&dm",
+      data:{
+        "code": app.globalData.userCode,
+        "date":app.globalData.searchDay,
+        "dm":"0",
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success(res){
+        console.log(res.data.data);
+        var array = res.data.data;
+        console.log(array);
+        var newjson = JSON.stringify(array);
+        var json = JSON.parse(newjson);
+        that.setData({
+          doctorName:json['docName'],
+          doctorUrl:json['docUrl'],
+          reportResult: json['reportResult'],
+          reportSubject: json['subject'],
+        });
+      },
+    })
+    // console.log(app.globalData.userCode);
+    // console.log(app.globalData.serverUrl);
   },
 
   /**

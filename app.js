@@ -2,11 +2,11 @@
 var util = require('/utils/util.js') //引入微信自带的日期格式化
 App({
   onLaunch: function () {
+    var that = this;
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
     // 登录
     wx.login({
       success: res => {
@@ -14,9 +14,13 @@ App({
         var timestamp = Date.parse(new Date());
         var date = new Date(timestamp);
         var creationTime = util.formatTime(date);
+        that.globalData.openDate = creationTime;
+        // that.globalData.searchDay = date.toLocaleDateString();
+        that.globalData.searchDay = creationTime.substring(0,10);
+        // console.log(that.globalData.searchDay);
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res.code);
-        console.log(creationTime);
+        // console.log(res.code);
+        // console.log(creationTime);
         var app = getApp();
         //通过获取到的code传到后台校验，若系统中已经有存在的微信号则不再新建用户，否则在系统中新建用户
         wx.request({
@@ -30,8 +34,10 @@ App({
           header: {
             'content-type': 'application/x-www-form-urlencoded'
           },
-          success: function (res) {
-            console.log(res);
+          success(res){
+            //返回用户编码方便后续使用
+            that.globalData.userCode=res.data.data;
+            console.log(that.globalData.userCode);
           },  
         })
       }
@@ -57,9 +63,15 @@ App({
       }
     })
   },
+  
   globalData: {
     userInfo: null,
     //通过全局变量设置服务器地址
     serverUrl:"http://127.0.0.1:8090",
+    userOpenId:"",
+    userCode:"",//用户编码
+    openDate:"",//用户打开小程序的准确时间，精确到秒
+    searchDay:"",//用户查找报告的日子，取服务器当前时间，精确到日
   }
+  
 })

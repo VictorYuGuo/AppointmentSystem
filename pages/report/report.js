@@ -10,6 +10,8 @@ Page({
     doctorUrl:"",//医生照片
     reportResult:"",//结果
     reportSubject:"",//科室
+    display1:"block",
+    display2:"none",
   },
 
   /**
@@ -30,6 +32,15 @@ Page({
       },
       success(res){
         console.log(res.data.data);
+        if(res.data.data==null){
+          that.setData({
+            display1:"none",
+            display2:"block",
+          })
+        }
+        else{
+        console.log(res);
+        console.log(res.data.data);
         var array = res.data.data;
         console.log(array);
         var newjson = JSON.stringify(array);
@@ -40,6 +51,7 @@ Page({
           reportResult: json['reportResult'],
           reportSubject: json['subject'],
         });
+        }
       },
     })
     // console.log(app.globalData.userCode);

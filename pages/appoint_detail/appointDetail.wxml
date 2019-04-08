@@ -3,18 +3,18 @@
   <view class="title">您当前的预约信息</view>
   <view class="container">
     <view class="text">预约日期</view>
-    <view class="data">2019-04-03</view>
+    <view class="data">{{appointDate}}</view>
   </view>
   <view class="container">
     <view class="text">预约诊所</view>
-    <view class="data">中山三院</view>
+    <view class="data">{{clinic}}</view>
   </view>
   <view class="container">
     <view class="text">预约科室</view>
-    <view class="data">呼吸科</view>
+    <view class="data">{{subject}}</view>
   </view>
   <view class="container">
     <view class="text">预约医生</view>
-    <view class="data">赵医生</view>
+    <view class="data">{{doctor}}</view>
   </view>
 </view>

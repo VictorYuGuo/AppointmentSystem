@@ -1,4 +1,7 @@
 /* pages/report/report.wxss */
+.report_container{
+  
+}
 .title{
   font-size: 50rpx;
   text-align: center;

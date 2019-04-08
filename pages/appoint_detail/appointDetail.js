@@ -5,14 +5,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    appointDate:"",
+    clinic:"",
+    subject:"",
+    doctor:"",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    var app = getApp();
+    wx.request({
+      url: app.globalData.serverUrl +"/appoint/find/type=userCode&date&dm",
+      data:{
+        "userCode":app.globalData.userCode,
+        "date":app.globalData.searchDay,
+        "dm":"0"
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success(res){
+        console.log(res);
+        that.setData({
+          appointDate:res.data.data['appointDate'].substring(0,10),
+          clinic: res.data.data['appointClinic'],
+          subject: res.data.data['appointType'],
+          doctor: res.data.data['docName'],
+        })
+      }
+    })
   },
 
   /**

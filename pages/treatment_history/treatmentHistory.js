@@ -5,14 +5,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+     dataList:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    var app = getApp();
+    wx.request({
+      url: app.globalData.serverUrl +"/report/find/type=usercode&dm",
+      data:{
+        "code":app.globalData.userCode,
+        "dm":"0",
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success(res){
+        // console.log(res);
+        // var dataList = res.data.data;
+        // console.log(dataList);
+        // console.log(dataList[0]['reportDate']);
+        that.setData({
+          dataList:res.data.data,
+        });
+        console.log(that.data.dataList);
+      }
+    })
   },
 
   /**

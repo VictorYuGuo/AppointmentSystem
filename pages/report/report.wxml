@@ -1,9 +1,13 @@
 <!--pages/report/report.wxml-->
-<view class="report_container">
+<view class="report_container" style='display: {{display1}}'>
   <view class="title">检查报告</view>
   <view class="date">{{reportDate}}</view>
   <image class="doctor_image" src="/picture/doctor1.png"></image>
   <text>{{doctorName}}:</text>
   <text></text>
   <view class="report_result">{{reportResult}}</view>
+</view>
+<view class="noneMessage" style='display:{{display2}}'>
+  <view class="title">检查报告</view>
+  <view style='text-align:center'>当前没有进行中的就诊</view>
 </view>

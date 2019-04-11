@@ -105,6 +105,13 @@ Component({
       var year1 = self.data.canlender.year;
       var month1 = self.data.canlender.month;
       var day1 = self.data.canlender.date;
+      if(month1<10){
+        month1="0"+month1;
+      }
+      if(day1<10){
+        day1="0"+day1;
+      }
+      // console.log("跳转的年月日为" + year1 + month1 + day1);
       wx.navigateTo({
         url: '../../pages/appoint_result/appointResult?year='+year1+'&month='+month1+'&day='+day1
       })

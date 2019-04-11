@@ -18,7 +18,8 @@ Page({
       date: '2018-5-24'
     }, {
       date: '2018-5-25'
-    }]
+    }],
+    clinicList:[],
   },
 
   /**
@@ -40,6 +41,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var app = getApp();
+    var that = this;
+    wx.request({
+      url: app.globalData.serverUrl + "/clinic/find",
+      success(res) {
+        console.log(res);
+        var dataList = res.data.data;
+        that.setData({
+          clinicList: dataList,
+        })
+        console.log(that.data.clinicList);
+      }
+    })
     // 实例化地图API核心类
     qqmapsdk = new QQMapWX({
       key: '3A7BZ-V4ZCR-OAXWU-WFEPU-52VV3-ZFB7O'

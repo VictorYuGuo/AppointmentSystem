@@ -46,7 +46,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin:30rpx 0rpx 60rpx;
+    margin:0rpx 0rpx 30rpx;
 }
 .ar_date_time .ar_date,
 .ar_date_time .ar_time{
@@ -86,4 +86,8 @@
 .doctorPicker picker{
   border:1px solid #ddd;
   border-radius:8rpx;
+}
+
+.appointInfo{
+  border: 1px solid #ddd;
 }

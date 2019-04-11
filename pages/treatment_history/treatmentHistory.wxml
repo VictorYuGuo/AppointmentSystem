@@ -7,20 +7,6 @@
       <view class="item">就诊科室</view>
       <view class="item">就诊医生</view>
     </view>
-  <!-- <view class="items_container">
-    <view class="item_container">
-      <view class="item_date">2019-01-01</view>
-      <view class="item">中山三院</view>
-      <view class="item">口腔科</view>
-      <view class="item">赵医生</view>
-    </view>
-    <view class="item_container">
-      <view class="item_date">2019-02-02</view>
-      <view class="item">中山四院</view>
-      <view class="item">眼科</view>
-      <view class="item">钱医生</view>
-    </view>
-  </view> -->
   <view class="items_container" wx:for="{{dataList}}" wx:key = "{{id}}" wx:for-index="id">
     <view class="item_container">
       <view class="item_date">{{item.reportDate}}</view>

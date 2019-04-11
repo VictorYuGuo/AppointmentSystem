@@ -40,13 +40,17 @@
 
     <!-- <input type="text" placeholder="输入信息" class="input_msg" placeholder-style="font-family:'微软雅黑'"/> -->
     <view class='doctorPicker'>
-    <picker mode="multiSelector" bindchange="bindMultiDoctorChange" bindcolumnchange="bindMultiDoctorColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <picker mode="multiSelector" bindchange="bindMultiDoctorChange" bindcolumnchange="bindMultiDoctorColumnChange" value="{{multiIndex}}" range="{{multiArray}}" range-key="docName">
       <view class="picker">
-        当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
+        当前选择：{{multiArray[0][multiIndex[0]]['docName']}}，{{multiArray[1][multiIndex[1]]['docName']}}
       </view>
     </picker>
     </view>
 
+    <view style='margin-top:30rpx'>
+      <text class="ar_cont_h1" >预约备注</text>
+      <input class="appointInfo" type='text' placeholder='请输入预约备注' bindinput='setAppointInfo'></input>
+    </view>
     <button class="ar_book" bindtap="bindToastTap">确认预定</button>
     <toast hidden="{{bookToastHidden}}" bindchange="hideToast">
       预定成功

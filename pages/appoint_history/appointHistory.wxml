@@ -1,18 +1,18 @@
 <!--pages/appoint_history/appointHistory.wxml-->
 <view class="history_container">
   <view class="title">预约历史记录</view>
-  <view class="items_container">
+  <view class="title_container">
+      <view class="item_date">预约日期</view>
+      <view class="item">预约诊所</view>
+      <view class="item">预约科室</view>
+      <view class="item">预约医生</view>
+  </view>
+  <view class="items_container" wx:for="{{dataList}}" wx:key = "{{id}}" wx:for-index="id">
     <view class="item_container">
-      <view class="item">获取日期</view>
-      <view class="item">获取就诊诊所</view>
-      <view class="item">获取就诊科室</view>
-      <view class="item">获取就诊医生</view>
-    </view>
-    <view class="item_container">
-      <view class="item">获取日期</view>
-      <view class="item">获取就诊诊所</view>
-      <view class="item">获取就诊科室</view>
-      <view class="item">获取就诊医生</view>
+      <view class="item_date">{{item.appointDate}}</view>
+      <view class="item">{{item.appointClinic}}</view>
+      <view class="item">{{item.appointType}}</view>
+      <view class="item">{{item.appointDocName}}</view>
     </view>
   </view>
 </view>

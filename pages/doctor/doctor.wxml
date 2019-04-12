@@ -4,147 +4,19 @@
 
   <!-- 左侧栏 -->
   <view class='nav_left'>
-
-    <view class="nav_left_items {{curNav == 1 ? 'active' : ''}}" bindtap="switchRightTab" data-id="1">
-      特诊医疗
+    <view wx:for="{{subjects}}" wx:key="{{id}}" wx:for-index="id" class="nav_left_items {{curNav == id ? 'active' : ''}}" bindtap="switchRightTab" data-id="{{id}}">
+      {{item.docName}}
     </view>
-
-    <view class="nav_left_items {{curNav == 2 ? 'active' : ''}}" bindtap="switchRightTab" data-id="2">
-      内科
-    </view>
-
-    <view class="nav_left_items {{curNav == 3 ? 'active' : ''}}" bindtap="switchRightTab" data-id="3">
-      外科
-    </view>
-
-    <view class="nav_left_items {{curNav == 4 ? 'active' : ''}}" bindtap="switchRightTab" data-id="4">
-      神经科
-    </view>
-
-    <view class="nav_left_items {{curNav == 5 ? 'active' : ''}}" bindtap="switchRightTab" data-id="5">
-      耳鼻喉科
-    </view>
-
-    <view class="nav_left_items {{curNav == 6 ? 'active' : ''}}" bindtap="switchRightTab" data-id="6">
-      口腔科
-    </view>
-
-    <view class="nav_left_items {{curNav == 7 ? 'active' : ''}}" bindtap="switchRightTab" data-id="7">
-      眼科
-    </view>
-
-    <view class="nav_left_items {{curNav == 8 ? 'active' : ''}}" bindtap="switchRightTab" data-id="8">
-      放射科
-    </view>
-
   </view>
 
   <!-- 右侧栏 -->
   <view class="nav_right">
-
-    <view wx:if="{{curNav==1}}">
-      <view class="nav_right_items" bindtap="chooseDoctor">
-        <image src="../../picture/doctor1.png"></image>
-        <view>
-          <text>赵某人</text>
-          <text class="doctor_subject">特诊医疗门诊，专家门诊</text>
-        </view>
-      </view>
-
-      <view class="nav_right_items">
-        <image src="../../picture/doctor1.png"></image>
-        <view>
-          <text>赵某人</text>
-          <text class="doctor_subject">特诊医疗门诊，专家门诊,</text>
-        </view>
-      </view>
-
-      <view class="nav_right_items">
-        <image src="../../picture/doctor1.png"></image>
-        <view>
-          <text>赵某人</text>
-          <text class="doctor_subject">特诊医疗门诊，专家门诊</text>
-        </view>
-      </view>
-
-      <view class="nav_right_items">
-        <image src="../../picture/doctor1.png"></image>
-        <view>
-          <text>赵某人</text>
-          <text class="doctor_subject">内科,呼吸内科专家</text>
-        </view>
-      </view>
-
-      <view class="nav_right_items">
-        <image src="../../picture/doctor1.png"></image>
-        <view>
-          <text>林某人</text>
-          <text class="doctor_subject">内科，血液内科专家，血液透析专科门诊</text>
-        </view>
+    <view wx:for="{{selectedDoctors}}" wx:key="{{id}}" wx:for-index="id" class="nav_right_items" bindtap="chooseDoctor" data-doctor="{{item}}">
+      <image src="{{item.docUrl}}" data-doctor="{{item}}"></image>
+      <view>
+        <text data-doctor="{{item}}">{{item.docName}}</text>
+        <text class="doctor_subject" data-doctor="{{item}}">{{item.docSubject}}</text>
       </view>
     </view>
-
-    <view wx:if="{{curNav==2}}">
-      <view class="nav_right_items">
-        <image src="../../picture/doctor1.png"></image>
-        <view>
-          <text>赵医生</text>
-          <text class="doctor_subject">内科，内分泌科专家，消化内科门诊</text>
-        </view>
-      </view>
-
-      <view class="nav_right_items">
-        <image src="../../picture/doctor1.png"></image>
-        <view>
-          <text>朱医生</text>
-          <text class="doctor_subject">内科，血液内科专家，血液透析专科</text>
-        </view>
-      </view>
-
-      <view class="nav_right_items">
-        <image src="../../picture/doctor1.png"></image>
-        <view>
-          <text>刘医生</text>
-          <text class="doctor_subject">内科,呼吸内科专家</text>
-        </view>
-      </view>
-
-      <view class="nav_right_items">
-        <image src="../../picture/doctor1.png"></image>
-        <view>
-          <text>周医生</text>
-          <text class="doctor_subject">内科,呼吸内科专家</text>
-        </view>
-      </view>
-
-    </view>
-
-    <view wx:if="{{curNav==3}}">
-      <view class="nav_right_items">
-        <image src="../../picture/doctor1.png"></image>
-        <view>
-          <text>赵某人</text>
-          <text class="doctor_subject">特诊医疗门诊，专家门诊</text>
-        </view>
-      </view>
-
-      <view class="nav_right_items">
-        <image src="../../picture/doctor1.png"></image>
-        <view>
-          <text>赵某人</text>
-          <text class="doctor_subject">特诊医疗门诊，专家门诊</text>
-        </view>
-      </view>
-
-      <view class="nav_right_items">
-        <image src="../../picture/doctor1.png"></image>
-        <view>
-          <text>赵某人</text>
-          <text class="doctor_subject">特诊医疗门诊，专家门诊</text>
-        </view>
-      </view>
-    </view>
-
   </view>
-
 </view>

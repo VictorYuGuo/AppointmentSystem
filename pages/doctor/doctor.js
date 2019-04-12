@@ -5,14 +5,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-    curNav: 1
+    curNav: 0,
+    doctors:[],
+    subjects:[],
+    selectedDoctors:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    var app = getApp();
+    wx.request({
+      url: app.globalData.serverUrl + "/appoint/get/subject&doctor",
+      success(res) {
+        // console.log(res);
+        that.setData({
+          doctors:res.data.data['doctors'],
+          subjects:res.data.data['subjects'],
+        })
+        console.log(that.data.doctors);
+        console.log(that.data.subjects);
+        var dataList = that.data.doctors;
+        var selectedData = dataList.filter((p) => {
+          console.log(that.data.subjects[0]['docName']);
+          return p.docType == that.data.subjects[0]['docName'];
+        });
+        that.setData({
+          selectedDoctors:selectedData,
+        })
+      },
+    })
   },
 
   /**
@@ -40,7 +64,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    
   },
 
   /**
@@ -68,15 +92,24 @@ Page({
   switchRightTab: function (e) {
     let id = e.target.dataset.id;
     console.log(id);
+    var dataList = this.data.doctors;
+    var selectedData = dataList.filter((p) => {
+      console.log(this.data.subjects[id]['docName']);
+      return p.docType == this.data.subjects[id]['docName'];
+    });
+    console.log(selectedData);
     this.setData({
-      curNav: id
+      curNav: id,
+      selectedDoctors:selectedData,
     })
   },
 
   /*选择医生时跳转至医生详细信息*/ 
-  chooseDoctor:function(){
+  chooseDoctor:function(e){
+    var doctorDetail = JSON.stringify(e.target.dataset.doctor);
+    console.log(doctorDetail);
     wx.navigateTo({
-      url: '../../pages/doctor_detail/doctorDetail'
+      url: '../../pages/doctor_detail/doctorDetail?doctor='+doctorDetail,
     })
   }
 })

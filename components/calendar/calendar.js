@@ -101,7 +101,6 @@ Component({
     packup() {
       //点击确认跳转至预约信息输入界面
       let self = this;
-      // console.log(self.data.canlender.year + "-" + self.data.canlender.month + "-" + self.data.canlender.date);
       var year1 = self.data.canlender.year;
       var month1 = self.data.canlender.month;
       var day1 = self.data.canlender.date;
@@ -111,33 +110,9 @@ Component({
       if(day1<10){
         day1="0"+day1;
       }
-      // console.log("跳转的年月日为" + year1 + month1 + day1);
       wx.navigateTo({
         url: '../../pages/appoint_result/appointResult?year='+year1+'&month='+month1+'&day='+day1
       })
-      // let self = this;
-      // if (this.data.isOpen) {
-      //   let year = self.data.canlender.year + "-" + self.data.canlender.month + "-" + self.data.canlender.date
-      //   let _date = self.getDate(year, 0);
-      //   self.getWeek(_date);
-      //   return
-      // }
-      // self.setData({
-      //   dateShow: false
-      // }, () => {
-      //   setTimeout(() => {
-      //     self.setData({
-      //       calShow: true
-      //     }, () => {
-      //       let year = self.data.canlender.year + "-" + self.data.canlender.month + "-" + self.data.canlender.date
-      //       let _date = self.getDate(year, 0);
-      //       self.getWeek(_date);
-      //       self.triggerEvent('select', {
-      //         ischeck: !self.data.calShow
-      //       })
-      //     })
-      //   }, 300)
-      // })
     },
 
     // 返回今天

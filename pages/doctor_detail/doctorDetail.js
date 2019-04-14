@@ -12,6 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.doctor);
     var doctor = JSON.parse(options.doctor);
     this.setData({
       doctorDetail:doctor,
@@ -73,7 +74,7 @@ Page({
    */
   chatOnline:function(){
     wx.navigateTo({
-      url: '../../pages/chatview/chatView'
+      url: '../../pages/chatview/chatView?pkDoc=' + this.data.doctorDetail.pkDoc
     })
   }
 })

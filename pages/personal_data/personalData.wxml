@@ -1,0 +1,30 @@
+<!--pages/personal_data/personalData.wxml-->
+<view class="dataContainer">
+  <view class="name" bindtap="editName">姓名
+    <view class="value">{{name}}</view>
+  </view>
+  <view class="sex" bindtap="editSex">性别
+    <view class="value">{{sex}}</view>
+  </view>
+  <view class="phone" bindtap="editPhone">电话
+    <view class="value">{{phone}}</view>
+  </view>
+  <view class="type" bindtap="editType">是否会员
+    <view class="value">{{type=="0"?"否":"是"}}</view>
+  </view>
+  <modal hidden="{{hidden}}" title="修改姓名" confirm-text="确定" cancel-text="取消" bindcancel="cancelName" bindconfirm="confirmName" no-cancel="{{nocancel}}">
+    <input style="text-align:center" value="{{name}}" bindinput="getInputName"></input>
+  </modal>
+
+  <modal hidden="{{hiddenSex}}" title="修改性别" confirm-text="确定" cancel-text="取消" bindcancel="cancelSex" bindconfirm="confirmSex" no-cancel="{{nocancel}}">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{sexArray}}">
+        <radio value="{{item.value}}" checked="{{item.checked}}" /> {{item.value}}
+      </label>
+    </radio-group>
+  </modal>
+
+  <modal hidden="{{hiddenPhone}}" title="修改电话号码" confirm-text="确定" cancel-text="取消" bindcancel="cancelPhone" bindconfirm="confirmPhone" no-cancel="{{nocancel}}">
+    <input style="text-align:center" value="{{phone}}" bindinput="getInputPhone"></input>
+  </modal>
+</view>

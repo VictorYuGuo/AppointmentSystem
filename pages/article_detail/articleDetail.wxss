@@ -1,0 +1,30 @@
+/* pages/article_detail/articleDetail.wxss */
+.container{
+    background:#fff;
+}
+.ar_coverpath{
+    width:100%;
+    margin:0;
+    box-sizing:border-box;
+    padding:40rpx 20rpx;
+}
+.ar_coverpath image{
+    width:100%;
+    height:390rpx;
+}
+.ar_cont{
+    padding:0rpx 60rpx;
+    font-size:30rpx;
+    background: #fff;
+    margin-bottom:40rpx;
+    line-height: 45rpx;
+    color:#666666;
+}
+.ar_cont .ar_cont_h1{
+    width:100%;
+    font-size: 32rpx;
+    font-weight: 600;
+    line-height: 64rpx;
+    color:#000;
+    text-align: center;
+}

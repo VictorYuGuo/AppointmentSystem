@@ -1,0 +1,11 @@
+<!--pages/article_detail/articleDetail.wxml-->
+<view class="container">
+  <view class="ar_coverpath">
+    <image src="{{artPicture}}" mode="aspectFill"></image>
+  </view>
+  <view class="ar_cont">
+    <view class="ar_cont_h1">{{artTitle}}</view>
+    <text>{{artText}}
+    </text>
+  </view>
+</view>

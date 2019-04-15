@@ -1,31 +1,24 @@
 <!--pages/article/article.wxml-->
 <view class="article_swiper">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
-    <swiper-item class="item_form">
-      <image src="/picture/sport1.jpg" mode='aspectFill'></image>
-      <view class="item_text">常骑自行车对于身体的好处你知道吗？</view>
+    <swiper-item class="item_form" wx:for="{{listTop}}" wx:key = "{{id}}" wx:for-index="id">
+      <image src="{{item.artPicture}}" mode='aspectFill' bindtap="openUrl" data-id="{{id}}"></image>
+      <view class="item_text">{{item.artTitle}}</view>
     </swiper-item>
-    <swiper-item class="item_form">
-      <image src="/picture/sport2.jpg" mode='aspectFill'></image>
-      <view class="item_text">当程序员压力有多大？</view>
-    </swiper-item>
-    <swiper-item class="item_form">
-      <image src="/picture/sport3.jpg" mode='aspectFill'></image>
-      <view class="item_text">震惊！99%的大学生都不知道的...</view>
-    </swiper-item>
+    
   </swiper>
 </view>
 
 <!--下半部分list_items-->
 <view class="container">
   <view class="news-item-container">
-    <navigator class="navigator" url="../detail/detail?id={{item.id}}" wx:for="{{list}}" wx:key = "{{id}}" wx:for-index="id">
+    <navigator class="navigator" url="../article_detail/articleDetail?title={{item.artTitle}}&picture={{item.artPicture}}&text={{item.artText}}" wx:for="{{listBottom}}" wx:key = "{{id}}" wx:for-index="id">
         <view class="news-item" >
           <view class="news-item-left">
-            <text class="news-item-title">{{item.title}}</text>
+            <text class="news-item-title">{{item.artTitle}}</text>
           </view>
           <view class="news-item-right">
-            <image src="{{item.image}}" class="news-image"/>
+            <image src="{{item.artPicture}}" class="news-image"/>
           </view>
         </view>
     </navigator>

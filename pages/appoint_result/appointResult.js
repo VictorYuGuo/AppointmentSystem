@@ -44,26 +44,25 @@ Page({
     wx.request({
       url: app.globalData.serverUrl + "/appoint/get/subject&doctor",
       success(res) {
-        // console.log(res);
         var array = res.data.data;
         var newjson = JSON.stringify(array);
         var json = JSON.parse(newjson);
-        // console.log(json['subjects']);
-        console.log(json['doctors']);
         var docNames = new Array();
         var doctors = json['doctors'];
         for (var i in doctors) {
           docNames.push(doctors[i]['docName']);
         }
-        // console.log(docNames);
+        //初次加载先筛选
+        var doctorsSelectedBySubject = json['doctors'].filter((p) => {
+          return p.docType == json['subjects'][0]['docName'];
+        });
         that.setData({
-          multiArray: [json['subjects'], json['doctors']],
+          multiArray: [json['subjects'], doctorsSelectedBySubject],
           doctors: json['doctors'],
           appointDoctor: json['doctors'][0],
           appointSubject: json['subjects'][0],
         })
-        // console.log(that.data.multiArray[0]);
-        // console.log(that.data.multiArray[1]);
+        
       }
     });
     this.setData({
@@ -109,13 +108,6 @@ Page({
         console.log(res);
       }
     })
-    console.log('预定成功');
-    console.log(this.data.appointClinic);
-    console.log(this.data.appointDate);
-    console.log(this.data.appointTime);
-    console.log(this.data.appointDoctor);
-    console.log(this.data.appointSubject);
-    console.log(this.data.appointInfo);
     this.setData({
       bookToastHidden: false
     })
@@ -153,7 +145,6 @@ Page({
     console.log(this.data.multiArray);
   },
   bindMultiDoctorColumnChange: function(e) {
-    // console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
     var that = this;
     var data = {
       multiArray: this.data.multiArray,
@@ -162,37 +153,12 @@ Page({
     data.multiArray[1] = this.data.doctors;
     // console.log(data.multiArray[1]);
     data.multiIndex[e.detail.column] = e.detail.value;
-    // switch (e.detail.column) {
-    //   case 0:
-    //     switch (data.multiIndex[0]) {
-    //       case 0:
-    //         data.multiArray[1] = ['赵某人', '钱某人', '孙某人'];
-    //         break;
-    //       case 1:
-    //         data.multiArray[1] = ['李某人', '周某人', '吴某人'];
-    //         break;
-    //     }
-    //     data.multiIndex[1] = 0;
-    //     data.multiIndex[2] = 0;
-    //     break;
-    //     data.multiIndex[2] = 0;
-    //     console.log(data.multiIndex);
-    //     break;
-    // }
     var subjectValue = data.multiArray[e.detail.column][e.detail.value]['docName'];
-    // if(subjectValue==="口腔科"){
-    //   console.log("true");
-    // }
-    // console.log(data.multiArray[e.detail.column][e.detail.value]['docName']);
     var doctorsSelectedBySubject = data.multiArray[1].filter((p) => {
       return p.docType == subjectValue;
     });
-    // console.log(doctorsSelectedBySubject);
     data.multiArray[1] = doctorsSelectedBySubject;
     this.setData(data);
-    // that.setData({
-    //   multiArray: [data.multiArray[0], doctorsSelectedBySubject],
-    // });
   },
 
   /**

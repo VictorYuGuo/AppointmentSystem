@@ -83,5 +83,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  openReport:function(e){
+    var report = e.target.dataset['report'];
+    // console.log(report);
+    wx.navigateTo({
+      url: '../report/report?report='+JSON.stringify(report),
+    })
   }
 })

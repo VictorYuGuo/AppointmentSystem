@@ -67,7 +67,8 @@ App({
   globalData: {
     userInfo: null,
     //通过全局变量设置服务器地址
-    serverUrl: "https://liuyuxin.xyz:8090",
+    // serverUrl: "https://liuyuxin.xyz:8090",
+    serverUrl: "http://127.0.0.1:8090",
     userOpenId:"",
     userCode:"",//用户编码
     openDate:"",//用户打开小程序的准确时间，精确到秒

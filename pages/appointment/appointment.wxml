@@ -21,7 +21,7 @@
 
 <view wx:for="{{clinicList}}" wx:key = "{{id}}" wx:for-index="id">
   <view id="topView" class="appointment_view" capture-catch:tap='openMap' data-text="{{item.clinicAddress}}">
-    <image src="/picture/hospital2.jpg" class="picture_form" data-text="{{item.clinicAddress}}"></image>
+    <image src="{{item.clinicImg}}" class="picture_form" data-text="{{item.clinicAddress}}"></image>
     <view data-text="{{item.clinicAddress}}">
       <view class="pic_title" id="child1" data-text="{{item.clinicAddress}}">{{item.docClinic}}</view>
       <view class="pic_text" id='address' data-text="{{item.clinicAddress}}">{{item.clinicAddress}}</view>

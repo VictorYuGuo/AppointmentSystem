@@ -2,7 +2,7 @@
 <view class="report_container" style='display: {{display1}}'>
   <view class="title">检查报告</view>
   <view class="date">{{reportDate}}</view>
-  <image class="doctor_image" src="/picture/doctor1.png"></image>
+  <image class="doctor_image" src="{{doctorUrl}}"></image>
   <text>{{doctorName}}:</text>
   <text></text>
   <view class="report_result">{{reportResult}}</view>

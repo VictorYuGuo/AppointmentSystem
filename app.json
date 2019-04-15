@@ -15,7 +15,8 @@
     "pages/treatment_history/treatmentHistory",
     "pages/appoint_history/appointHistory",
     "pages/appoint_detail/appointDetail",
-    "pages/personal_data/personalData"
+    "pages/personal_data/personalData",
+    "pages/article_detail/articleDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

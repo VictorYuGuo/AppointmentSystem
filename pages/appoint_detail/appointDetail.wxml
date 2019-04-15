@@ -1,5 +1,5 @@
 <!--pages/appoint_detail/appointDetail.wxml-->
-<view class="appoint_container">
+<view class="appoint_container" style='display: {{display1}}'>
   <view class="title">您当前的预约信息</view>
   <view class="container">
     <view class="text">预约日期</view>
@@ -17,4 +17,13 @@
     <view class="text">预约医生</view>
     <view class="data">{{doctor}}</view>
   </view>
+  <button class="ar_book" bindtap="bindToastTap">取消预约</button>
+    <toast hidden="{{bookToastHidden}}" bindchange="hideToast">
+      预约已取消
+    </toast>
+</view>
+
+<view class="noneMessage" style='display:{{display2}}'>
+  <view class="title">您当前的预约信息</view>
+  <view style='text-align:center'>今天还没有任何预约信息哦</view>
 </view>

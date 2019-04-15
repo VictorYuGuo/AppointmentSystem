@@ -46,7 +46,7 @@
   </view>
 </view>
 
-<view class="appointment_view">
+<view class="appointment_view" bindtap="openConsume">
   <image src="/picture/money.png" class="picture_form"></image>
   <view>
     <view class="pic_title">消费记录</view>

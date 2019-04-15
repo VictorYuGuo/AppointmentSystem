@@ -102,22 +102,17 @@ Page({
    * 打开备忘录
    */
   openNote:function(e){
-    wx.request({
-      // url: 'https://liuyuxin.xyz:8090/user/find',
-      url: 'http://127.0.0.1:8090/user/find',
-      data:{
-        wechat:'lyg0506f',
-      },
-      success:function(res){
-        console.log(res.data.data);
-        var array = res.data.data;
-        console.log(array[0]);
-        var newjson = JSON.stringify(array[0]);
-        var json = JSON.parse(newjson);
-        // var json = JSON.parse(res.data.data);
-        // console.log(json);
-        console.log(json['userId']);
-      }
+    wx.navigateTo({
+      url: '../noteview/noteview',
+    })
+  },
+
+  /**
+   * 打开消费记录
+   */
+  openConsume:function(e){
+    wx.navigateTo({
+      url: '../consume/consume',
     })
   }
 })

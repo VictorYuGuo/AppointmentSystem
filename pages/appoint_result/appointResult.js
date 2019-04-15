@@ -4,11 +4,11 @@ var util = require('../../utils/util')
 Page({
   data: {
     addrArray: ["请选择就诊诊所", "中山大学附属第三医院", "中山四院", "中山五院"],
-
     addrIndex: 0,
     date: '2019-03-29',
     time: '12:00',
     bookToastHidden: true,
+    bookResult:"",
     multiArray: [
       ['特诊医疗', '内科', '外科', '神经科', '耳喉鼻科', '口腔科', '眼科', '放射科'],
       ['赵医生']
@@ -89,6 +89,7 @@ Page({
   },
   bindToastTap: function() {
     var app = getApp();
+    var that = this;
     wx.request({
       url: app.globalData.serverUrl + "/appoint/new",
       data: {
@@ -106,6 +107,16 @@ Page({
       method: "POST",
       success(res) {
         console.log(res);
+        if("fail"==res.data.data){
+          that.setData({
+            bookResult:"预约失败，当前有未就诊完成的预约记录"
+          })
+        }
+        if("success"==res.data.data){
+          that.setData({
+            bookResult:"预约成功"
+          })
+        }
       }
     })
     this.setData({

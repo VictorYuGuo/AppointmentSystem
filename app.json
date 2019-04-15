@@ -16,7 +16,10 @@
     "pages/appoint_history/appointHistory",
     "pages/appoint_detail/appointDetail",
     "pages/personal_data/personalData",
-    "pages/article_detail/articleDetail"
+    "pages/article_detail/articleDetail",
+    "pages/consume/consume",
+    "pages/noteview/noteview",
+    "pages/noteview/newnote"
   ],
   "window": {
     "backgroundTextStyle": "light",

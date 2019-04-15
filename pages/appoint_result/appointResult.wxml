@@ -51,9 +51,9 @@
       <text class="ar_cont_h1" >预约备注</text>
       <input class="appointInfo" type='text' placeholder='请输入预约备注' bindinput='setAppointInfo'></input>
     </view>
-    <button class="ar_book" bindtap="bindToastTap">确认预定</button>
+    <button class="ar_book" bindtap="bindToastTap">确认预约</button>
     <toast hidden="{{bookToastHidden}}" bindchange="hideToast">
-      预定成功
+      {{bookResult}}
     </toast>
   </view>
 

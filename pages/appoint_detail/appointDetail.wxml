@@ -25,5 +25,5 @@
 
 <view class="noneMessage" style='display:{{display2}}'>
   <view class="title">您当前的预约信息</view>
-  <view style='text-align:center'>今天还没有任何预约信息哦</view>
+  <view style='text-align:center'>今天找不到没完成预约信息哦</view>
 </view>

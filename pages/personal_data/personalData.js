@@ -98,6 +98,7 @@ Page({
 
   confirmName:function(e){
     // console.log(e.detail.value);
+    var app = getApp();
     var that = this;
     that.setData({
       hidden:true,

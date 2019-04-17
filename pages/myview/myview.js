@@ -76,5 +76,11 @@ Page({
     wx.navigateTo({
       url: '../appoint_history/appointHistory',
     })
+  },
+
+  openChatHistory:function(e){
+    wx.navigateTo({
+      url: "../chat_history/chat_history",
+    })
   }
 })

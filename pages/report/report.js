@@ -10,7 +10,7 @@ Page({
     doctorUrl: "", //医生照片
     reportResult: "", //结果
     reportSubject: "", //科室
-    display1: "block",
+    display1: "none",
     display2: "none",
   },
 
@@ -49,6 +49,8 @@ Page({
             var newjson = JSON.stringify(array);
             var json = JSON.parse(newjson);
             that.setData({
+              display1: "block",
+              display2: "none",
               doctorName: json['docName'],
               doctorUrl: json['docUrl'],
               reportResult: json['reportResult'],
@@ -61,6 +63,8 @@ Page({
       var currentReport = JSON.parse(options.report);
       console.log(currentReport);
       that.setData({
+        display1: "block",
+        display2: "none",
         reportDate: currentReport.reportDate, //报告日期
         doctorName: currentReport.docName, //医生姓名s
         doctorUrl: currentReport.docUrl, //医生照片

@@ -21,5 +21,5 @@
   <view class="blank"></view>
   <view class="blank"></view>
   <view class="blank"></view>
-  <view class="myview_item">•设置</view>
+  <view class="myview_item" bindtap="openChatHistory">•聊天记录</view>
 </view>

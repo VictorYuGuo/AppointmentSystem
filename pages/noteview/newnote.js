@@ -123,8 +123,11 @@ Page({
       //   iconPath: 'assets/imgs/tabBarNew.png',
       //   selectedIconPath: 'assets/imgs/tabBarNewSelected.png'
       // });
-      wx.navigateTo({
-        url: 'noteview',
+      // wx.navigateTo({
+      //   url: 'noteview',
+      // })
+      wx.navigateBack({
+        
       })
     }
     catch (e) { }
@@ -209,8 +212,11 @@ Page({
           duration: 1000
         });
         setTimeout(function () {
-          wx.navigateTo({
-            url: 'noteview',
+          // wx.navigateTo({
+          //   url: 'noteview',
+          // })
+          wx.navigateBack({
+            
           })
         }, 800);
       }

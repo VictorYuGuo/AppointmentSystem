@@ -1,0 +1,13 @@
+<!--pages/chat_history/chat_history.wxml-->
+<view class="nav_right">
+  <view wx:for="{{chatList}}" wx:key="{{id}}" wx:for-index="id" class="nav_right_items" bindtap="openChatView" data-chat="{{item}}" bindtap='openChatView'>
+    <image src="{{item.docUrl}}" data-chat="{{item}}"></image>
+    <view data-chat="{{item}}">
+      <view data-chat="{{item}}">
+        <text data-chat="{{item}}">{{item.docName}}</text>
+        <text data-chat="{{item}}" class="mTime">{{item.mTime}}</text>
+      </view>
+      <text class="lastMessage" data-chat="{{item}}">{{item.message}}</text>
+    </view>
+  </view>
+</view>

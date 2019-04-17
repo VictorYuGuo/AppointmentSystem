@@ -19,7 +19,8 @@
     "pages/article_detail/articleDetail",
     "pages/consume/consume",
     "pages/noteview/noteview",
-    "pages/noteview/newnote"
+    "pages/noteview/newnote",
+    "pages/chat_history/chat_history"
   ],
   "window": {
     "backgroundTextStyle": "light",
